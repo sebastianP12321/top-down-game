@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d1sfqudkqf1uc"]
+
+[ext_resource type="Script" uid="uid://jknrr32irwrn" path="res://Scripts/world.gd" id="1_8j60k"]
+[ext_resource type="PackedScene" uid="uid://dlt08t4x8v5qo" path="res://Scenes/Functional/dialogue_box.tscn" id="1_ix05x"]
+[ext_resource type="PackedScene" uid="uid://dtstlkfjgjyqs" path="res://Scenes/Levels/level_1.tscn" id="2_fo5ed"]
+[ext_resource type="PackedScene" uid="uid://br36uhm01xsmo" path="res://Scenes/Functional/player.tscn" id="2_pbo1x"]
+
+[node name="World" type="Node2D" unique_id=218966148]
+y_sort_enabled = true
+script = ExtResource("1_8j60k")
+level_default = ExtResource("2_fo5ed")
+player = ExtResource("2_pbo1x")
+
+[node name="CurrentLevel" type="Node" parent="." unique_id=1536581524]
+
+[node name="DialogueBox" parent="." unique_id=422951683 instance=ExtResource("1_ix05x")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=112694150]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1922489959]
+offset_left = -31.0
+offset_top = -26.0
+offset_right = 376.0
+offset_bottom = 277.0
+color = Color(0, 0, 0, 1)

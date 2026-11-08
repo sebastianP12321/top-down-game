@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://hke6btwqnd8"]
+
+[ext_resource type="TileSet" uid="uid://l0pe6xsjbf0n" path="res://Assets/Tilesets/main_tileset.tres" id="1_pupxt"]
+
+[node name="level_GENERIC" type="Node2D" unique_id=13493257]
+y_sort_enabled = true
+
+[node name="BackgroundTiles" type="TileMapLayer" parent="." unique_id=1379910137]
+position = Vector2(2, 8)
+tile_set = ExtResource("1_pupxt")
+
+[node name="YSortTiles" type="TileMapLayer" parent="." unique_id=1940208755]
+y_sort_enabled = true
+
+[node name="LevelAmbience" type="AudioStreamPlayer" parent="." unique_id=390266085]
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="." unique_id=1963319685]

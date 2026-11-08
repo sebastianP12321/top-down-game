@@ -1,0 +1,15 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://du7dumt2f4hk1"]
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_0ksmk"]
+resource_name = "EQ"
+band_db/10000_hz = -23.6
+
+[resource]
+bus/1/name = &"dialogue effect"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectEQ_0ksmk")
+bus/1/effect/0/enabled = true
