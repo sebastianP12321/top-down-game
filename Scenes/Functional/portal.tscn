@@ -2,7 +2,17 @@
 
 [ext_resource type="Script" uid="uid://bg12hdvfs1u35" path="res://Scripts/portal.gd" id="1_ctm44"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctm44"]
+size = Vector2(466, 26)
+
 [node name="Portal" type="Area2D" unique_id=1678867704]
 script = ExtResource("1_ctm44")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=371707462]
+position = Vector2(224, 16)
+shape = SubResource("RectangleShape2D_ctm44")
+
+[node name="Level2_Left_Spawnpoint" type="Marker2D" parent="." unique_id=1391750863]
+position = Vector2(222, 65)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

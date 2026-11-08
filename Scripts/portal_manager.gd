@@ -15,18 +15,19 @@ func _ready() -> void:
 
 
 var all_levels: Dictionary = {
-	"level_1": preload("res://Scenes/Levels/level_1.tscn"),
-	"level_2": preload("res://Scenes/Levels/level_2.tscn")
+	"level_1": "res://Scenes/Levels/level_1.tscn",
+	"level_2": "res://Scenes/Levels/level_2.tscn"
 }
-func warp_player(target_level: PackedScene, target_spawnpoint: String, target_direction: String):
+func warp_player(target_level_path: String, target_spawnpoint: String, target_direction: String):
 	GameManager.is_player_warping = true
 	fade_out_tween = create_tween()
 	fade_out_tween.tween_property(color_rect, "modulate:a", 1.0, 0.5)
-	fade_out_tween.tween_callback(warp_player_finalize.bind(target_level, target_spawnpoint, target_direction))
+	fade_out_tween.tween_callback(warp_player_finalize.bind(target_level_path, target_spawnpoint, target_direction))
 	
 	
 
-func warp_player_finalize(target_level: PackedScene, target_spawnpoint: String, target_direction: String):
+func warp_player_finalize(target_level_path: String, target_spawnpoint: String, target_direction: String):
+	var target_level: PackedScene = load(target_level_path)
 	var target_level_instance = target_level.instantiate()
 	var player_scene_instance = player_scene.instantiate()
 	var world_tree = get_tree().current_scene
